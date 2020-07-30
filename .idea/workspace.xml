@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="" />
+    <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/child.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/cross.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/letter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/moon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sun.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/question.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/question.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/questionBrain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/questionBrain.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/questionScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/questionScreen.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="520098c4ec9d35af" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -28,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -83,10 +100,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="38" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1366.728@0.0.1366.728" timestamp="1596109398104" />
-    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1596109420498">
+    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1596136093155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596109420498" />
+    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596136093155" />
     <state x="64" y="104" key="DiffContextDialog" timestamp="1596109851766">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -99,22 +116,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="410" y="278" width="492" height="213" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109016648" />
-    <state width="435" height="663" key="GridCell.Tab.0.bottom" timestamp="1596058868225">
+    <state width="435" height="435" key="GridCell.Tab.0.bottom" timestamp="1596135943016">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="663" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596058868225" />
-    <state width="435" height="663" key="GridCell.Tab.0.center" timestamp="1596058868225">
+    <state width="435" height="435" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
+    <state width="435" height="435" key="GridCell.Tab.0.center" timestamp="1596135943016">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="663" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596058868225" />
-    <state width="435" height="663" key="GridCell.Tab.0.left" timestamp="1596058868225">
+    <state width="435" height="435" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
+    <state width="435" height="435" key="GridCell.Tab.0.left" timestamp="1596135943016">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="663" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596058868225" />
-    <state width="435" height="663" key="GridCell.Tab.0.right" timestamp="1596058868225">
+    <state width="435" height="435" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
+    <state width="435" height="435" key="GridCell.Tab.0.right" timestamp="1596135943016">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="663" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596058868225" />
+    <state width="435" height="435" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
     <state x="184" y="13" key="SettingsEditor" timestamp="1596109136103">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

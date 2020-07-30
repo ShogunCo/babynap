@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
 class Question {
 
   List<String> _listImage;
   String _text;
-  int _answer;
+  String _answer;
 
-  Question(List<String> listImage, String text, int answer) {
+  Question(List<String> listImage, String text, String answer) {
     _listImage = listImage;
     _text = text;
     _answer = answer;
@@ -15,5 +12,5 @@ class Question {
 
   List<String> get listImage => _listImage;
   String get text => _text;
-  int get answer => _answer;
+  String get answer => _answer;
 }

@@ -19,13 +19,14 @@ class _QuestionScreenState extends State<QuestionScreen> {
   // en-US
 
   QuestionBrain _questionBrain = QuestionBrain();
+  List<Icon> scoreKeeper = [];
 
   FlutterTts flutterTts;
   dynamic languages;
   String language = "tr-TR";
   double volume = 0.5;
-  double pitch = 1.0;
-  double rate = 0.5;
+  double pitch = 1.5;
+  double rate = 0.7;
 
   TtsState ttsState = TtsState.stopped;
 
@@ -41,6 +42,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   initState() {
     super.initState();
     initTts();
+    _speakRun(_questionBrain.text);
   }
 
   initTts() {
@@ -160,19 +162,33 @@ class _QuestionScreenState extends State<QuestionScreen> {
   }
 
   void checkAnswer(String answer) {
-    int correctAnswer = _questionBrain.answer;
+    String correctAnswer = _questionBrain.answer;
 
     setState(() {
       if (_questionBrain.isFinished() == true) {
 
         _questionBrain.reset();
+        scoreKeeper = [];
         print("Finished");
-
+        _speakRun(_questionBrain.text);
       }
 
       else {
 
+        if (answer == correctAnswer) {
+          scoreKeeper.add(Icon(
+            Icons.check,
+            color: Colors.green,
+          ));
+        } else {
+          scoreKeeper.add(Icon(
+            Icons.close,
+            color: Colors.red,
+          ));
+        }
+
         _questionBrain.nextQuestion();
+        _speakRun(_questionBrain.text);
       }
     });
   }
@@ -189,6 +205,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
         child: FlatButton(
           child: Image.asset(
             'assets/images/$shape',
+            height: 80,
+            width: 80,
           ),
           onPressed: () {
             checkAnswer(shape);
@@ -197,15 +215,24 @@ class _QuestionScreenState extends State<QuestionScreen> {
       );
 
   Widget generateImageWidget(List<String> strings, String text) {
+
     List<Widget> list = List<Widget>();
     for (var i = 0; i < strings.length; i += 2) {
       list.add(screenRow(strings[i], strings[i + 1]));
     }
 
-    list.add(Text(text));
+    list.add(Text(text,
+      textScaleFactor: 1.0, // disables accessibility
+      style: TextStyle(
+          fontSize: 35.0,
+      ),));
+
+    list.add(Row(
+      children: scoreKeeper,
+    ));
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: list,
     );
   }

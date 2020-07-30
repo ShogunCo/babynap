@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'question.dart';
 
 class QuestionBrain {
@@ -6,52 +5,72 @@ class QuestionBrain {
 
   List<Question> _questionBank = [
     Question(
-      ["square.png",
-      "star.png"],
-      "Which one star",
-      1,
-    ),
-    Question(
-      ["star.png",
-      "square.png",
-      "star.png",
-      "triangle.png"],
-      "Which one square",
-      2,
-    ),
-    Question(
-      ["star.png",
-        "square.png"],
-      "Which one star",
-      1,
-    ),
-    Question(
-      ["star.png",
+      [
         "square.png",
         "star.png",
-        "triangle.png"],
-      "Which one square",
-      2,
+      ],
+      "Hangisi Yıldız",
+      "star.png",
     ),
     Question(
-      ["square.png",
-        "star.png"],
-      "Which one star",
-      1,
-    ),
-    Question(
-      ["star.png",
+      [
+        "square.png",
         "triangle.png",
+      ],
+      "Hangisi Kare",
+      "square.png",
+    ),
+    Question(
+      [
+        "cross.png",
+        "moon.png",
+        "letter.png",
+        "sun.png",
+      ],
+      "Hangisi Güneş",
+      "sun.png",
+    ),
+    Question(
+      [
         "star.png",
-        "triangle.png"],
-      "Which one square",
-      2,
+        "box.png",
+        "heart.png",
+        "triangle.png",
+      ],
+      "Hangisi Kalp",
+      "heart.png",
+    ),
+    Question(
+      [
+        "heart.png",
+        "letter.png",
+        "star.png",
+        "cloud.png",
+        "square.png",
+        "box.png",
+      ],
+      "Hangisi Bulut",
+      "cloud.png",
+    ),
+    Question(
+      [
+        "arrow.png",
+        "box.png",
+        "clock.png",
+        "child.png",
+        "letter.png",
+        "sun.png",
+      ],
+      "Hangisi Kutu",
+      "box.png",
     ),
   ];
 
   List get listImage => _questionBank[_questionNumber].listImage;
+
   String get text => _questionBank[_questionNumber].text;
-  int get answer => _questionBank[_questionNumber].answer;
+
+  String get answer => _questionBank[_questionNumber].answer;
 
   void nextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
