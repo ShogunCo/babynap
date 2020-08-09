@@ -5,14 +5,20 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class TextToSpeech extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
 enum TtsState { playing, stopped, paused, continued }
 
+class TextToSpeech extends StatefulWidget {
+
+  String text;
+
+  @override
+  _MyAppState createState() => _MyAppState(text);
+
+  TextToSpeech(this.text);
+}
+
 class _MyAppState extends State<TextToSpeech> {
+
   FlutterTts flutterTts;
   dynamic languages;
   String language;
@@ -23,6 +29,8 @@ class _MyAppState extends State<TextToSpeech> {
   String _newVoiceText;
 
   TtsState ttsState = TtsState.stopped;
+
+  _MyAppState(this._newVoiceText);
 
   get isPlaying => ttsState == TtsState.playing;
 
@@ -94,6 +102,15 @@ class _MyAppState extends State<TextToSpeech> {
     });
   }
 
+
+  @override
+  Widget build(BuildContext context) {
+
+    _speak();
+
+    return null;
+  }
+
   Future _getLanguages() async {
     languages = await flutterTts.getLanguages;
     if (languages != null) setState(() => languages);
@@ -157,23 +174,6 @@ class _MyAppState extends State<TextToSpeech> {
     setState(() {
       _newVoiceText = text;
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('Flutter TTS'),
-            ),
-            body: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(children: [
-                  _inputSection(),
-                  _btnSection(),
-                  languages != null ? _languageDropDownSection() : Text(""),
-                  _buildSliders()
-                ]))));
   }
 
   Widget _inputSection() => Container(

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/child.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/clock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/cloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/cross.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/letter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/moon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/ic_launcher_new.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/splashScreen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/question.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/question.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/textToSpeech.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/textToSpeech.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/models/questionBrain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/questionBrain.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/widgets.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/questionScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/questionScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +45,22 @@
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/app/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\android\app\src\main\res\drawable" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\android\app\src\main\res\mipmap" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\the_hero_brain\lib" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\android\app\src\main\res\drawable" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\android\app\src\main\res\drawable\mipmap" />
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\the_hero_brain\lib\models" />
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\the_hero_brain\assets\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yilmaz\AndroidStudioProjects\the_hero_brain\lib" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -76,22 +81,30 @@
       <option name="project" value="LOCAL" />
       <updated>1596109425113</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added extra example images, answer check and designed screens.">
+      <created>1596136136814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596136136814</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="added extra example images, answer check and designed screens." />
+    <option name="LAST_COMMIT_MESSAGE" value="added extra example images, answer check and designed screens." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="42" key="#Notifications" timestamp="1596109501637">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="42" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1596109501637" />
-    <state x="597" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1596057243364">
+    <state x="597" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1596913162495">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="597" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596057243364" />
+    <state x="597" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596913162495" />
     <state x="531" y="273" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1596109402784">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -100,14 +113,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="38" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1366.728@0.0.1366.728" timestamp="1596109398104" />
-    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1596136093155">
+    <state x="542" y="232" key="AndroidCreateXmlResourceDialog" timestamp="1596245241544">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596136093155" />
-    <state x="64" y="104" key="DiffContextDialog" timestamp="1596109851766">
+    <state x="542" y="232" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245241544" />
+    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1596136136166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="64" y="104" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109851766" />
+    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596136136166" />
+    <state x="64" y="104" width="1092" height="610" key="DiffContextDialog" timestamp="1596902991426">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="64" y="104" width="1092" height="610" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1596902991426" />
     <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1596109166208">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -116,38 +133,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="410" y="278" width="492" height="213" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109016648" />
-    <state width="435" height="435" key="GridCell.Tab.0.bottom" timestamp="1596135943016">
+    <state width="359" height="492" key="GridCell.Tab.0.bottom" timestamp="1596975637962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="435" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
-    <state width="435" height="435" key="GridCell.Tab.0.center" timestamp="1596135943016">
+    <state width="359" height="492" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
+    <state width="359" height="492" key="GridCell.Tab.0.center" timestamp="1596975637962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="435" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
-    <state width="435" height="435" key="GridCell.Tab.0.left" timestamp="1596135943016">
+    <state width="359" height="492" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
+    <state width="359" height="492" key="GridCell.Tab.0.left" timestamp="1596975637962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="435" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
-    <state width="435" height="435" key="GridCell.Tab.0.right" timestamp="1596135943016">
+    <state width="359" height="492" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
+    <state width="359" height="492" key="GridCell.Tab.0.right" timestamp="1596975637962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="435" height="435" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596135943016" />
+    <state width="359" height="492" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
     <state x="184" y="13" key="SettingsEditor" timestamp="1596109136103">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596109136103" />
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1596109877488">
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1596136154884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596109877488" />
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596136154884" />
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595518094041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1595518094041" />
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1595939096791">
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1596586322767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595939096791" />
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596586322767" />
     <state x="347" y="176" key="run.anything.popup" timestamp="1595939477333">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

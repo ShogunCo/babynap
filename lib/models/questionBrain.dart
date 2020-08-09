@@ -1,7 +1,7 @@
 import 'question.dart';
 
 class QuestionBrain {
-  int _questionNumber = 0;
+  static int _questionNumber = 0;
 
   List<Question> _questionBank = [
     Question(

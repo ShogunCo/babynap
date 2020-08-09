@@ -4,8 +4,10 @@ import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:the_hero_brain/models/questionBrain.dart';
-
-final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+import 'package:the_hero_brain/widgets/constants.dart';
+import 'package:the_hero_brain/components/splashScreen.dart';
+import 'package:the_hero_brain/components/textToSpeech.dart';
+import 'package:the_hero_brain/models/widgets.dart';
 
 enum TtsState { playing, stopped, paused, continued }
 
@@ -20,13 +22,14 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   QuestionBrain _questionBrain = QuestionBrain();
   List<Icon> scoreKeeper = [];
+  bool status;
 
   FlutterTts flutterTts;
   dynamic languages;
   String language = "tr-TR";
-  double volume = 0.5;
-  double pitch = 1.5;
-  double rate = 0.7;
+  double volume = 0.7;
+  double pitch = 0.9;
+  double rate = 0.8;
 
   TtsState ttsState = TtsState.stopped;
 
@@ -43,6 +46,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     super.initState();
     initTts();
     _speakRun(_questionBrain.text);
+    //TextToSpeech(_questionBrain.text);
   }
 
   initTts() {
@@ -134,7 +138,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     });
   }
 
-  Widget _speakRun(String newVoiceText) {
+  void _speakRun(String newVoiceText) {
     if (!kIsWeb && Platform.isAndroid) {
       _speak(newVoiceText);
     } else {
@@ -142,19 +146,44 @@ class _QuestionScreenState extends State<QuestionScreen> {
     }
   }
 
+  Future<bool> _onWillPop() async {
+    return (await showDialog(
+      context: context,
+      builder: (context) =>
+          AlertDialog(
+            title: Text('Eminmisiniz?'),
+            content: Text('Testden çıkmak istiyor musunuz?'),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: Text('Hayır'),
+              ),
+              FlatButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: Text('Evet'),
+              ),
+            ],
+          ),
+    )) ??
+        false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // Outer white container with padding
-        body: SafeArea(
-          child: Container(
-            padding: EdgeInsets.all(20),
-            color: Colors.cyan,
-            child: generateImageWidget(
-                _questionBrain.listImage, _questionBrain.text),
+      home: WillPopScope(
+        onWillPop: _onWillPop,
+        child: Scaffold(
+          // Outer white container with padding
+          body: SafeArea(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.cyan,
+              child: generateImageWidget(
+                  _questionBrain.listImage, _questionBrain.text),
+            ),
           ),
         ),
       ),
@@ -166,34 +195,43 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
     setState(() {
       if (_questionBrain.isFinished() == true) {
-
         _questionBrain.reset();
         scoreKeeper = [];
         print("Finished");
         _speakRun(_questionBrain.text);
-      }
-
-      else {
-
+        //status = "finished";
+      } else {
         if (answer == correctAnswer) {
+          status = true;
           scoreKeeper.add(Icon(
             Icons.check,
             color: Colors.green,
           ));
         } else {
+          status = false;
           scoreKeeper.add(Icon(
             Icons.close,
             color: Colors.red,
           ));
         }
 
-        _questionBrain.nextQuestion();
-        _speakRun(_questionBrain.text);
-      }
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SplashScreen(status)),
+        );
+        _speakRun("${status ? "Doğru" : "Yanlış"} bildin");
+
+        Timer(Duration(seconds: 3), () {
+            _questionBrain.nextQuestion();
+            _speakRun(_questionBrain.text);
+      },);
+
+    }
     });
   }
 
-  Row screenRow(String image1, String image2) => Row(
+  Row screenRow(String image1, String image2) =>
+      Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           resultButton(image1),
@@ -201,7 +239,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ],
       );
 
-  Expanded resultButton(String shape) => Expanded(
+  Expanded resultButton(String shape) =>
+      Expanded(
         child: FlatButton(
           child: Image.asset(
             'assets/images/$shape',
@@ -215,17 +254,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
       );
 
   Widget generateImageWidget(List<String> strings, String text) {
-
     List<Widget> list = List<Widget>();
     for (var i = 0; i < strings.length; i += 2) {
       list.add(screenRow(strings[i], strings[i + 1]));
     }
 
-    list.add(Text(text,
+    list.add(Text(
+      text,
       textScaleFactor: 1.0, // disables accessibility
       style: TextStyle(
-          fontSize: 35.0,
-      ),));
+        fontSize: 35.0,
+      ),
+    ));
 
     list.add(Row(
       children: scoreKeeper,
