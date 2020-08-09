@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/ic_launcher_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/splashScreen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/widgets/constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/textToSpeech.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/textToSpeech.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/questionBrain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/questionBrain.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/widgets.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/questionScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/questionScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1596136136814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added back button handle, splash screen, also a splash screen between every question.">
+      <created>1596977381105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596977381105</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="added extra example images, answer check and designed screens." />
-    <option name="LAST_COMMIT_MESSAGE" value="added extra example images, answer check and designed screens." />
+    <MESSAGE value="added back button handle, splash screen, also a splash screen between every question." />
+    <option name="LAST_COMMIT_MESSAGE" value="added back button handle, splash screen, also a splash screen between every question." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="42" key="#Notifications" timestamp="1596109501637">
@@ -117,10 +115,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="232" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245241544" />
-    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1596136136166">
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1596977380249">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596136136166" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596977380249" />
     <state x="64" y="104" width="1092" height="610" key="DiffContextDialog" timestamp="1596902991426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -133,30 +131,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="410" y="278" width="492" height="213" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109016648" />
-    <state width="359" height="492" key="GridCell.Tab.0.bottom" timestamp="1596975637962">
+    <state width="359" height="492" key="GridCell.Tab.0.bottom" timestamp="1597008167192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="492" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
-    <state width="359" height="492" key="GridCell.Tab.0.center" timestamp="1596975637962">
+    <state width="359" height="492" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597008167192" />
+    <state width="359" height="492" key="GridCell.Tab.0.center" timestamp="1597008167192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="492" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
-    <state width="359" height="492" key="GridCell.Tab.0.left" timestamp="1596975637962">
+    <state width="359" height="492" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597008167192" />
+    <state width="359" height="492" key="GridCell.Tab.0.left" timestamp="1597008167192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="492" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
-    <state width="359" height="492" key="GridCell.Tab.0.right" timestamp="1596975637962">
+    <state width="359" height="492" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597008167192" />
+    <state width="359" height="492" key="GridCell.Tab.0.right" timestamp="1597008167192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="492" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596975637962" />
+    <state width="359" height="492" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597008167192" />
+    <state x="434" y="106" key="RollbackChangesDialog" timestamp="1597008786755">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="434" y="106" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1597008786755" />
     <state x="184" y="13" key="SettingsEditor" timestamp="1596109136103">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596109136103" />
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1596136154884">
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1596977394388">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596136154884" />
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596977394388" />
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595518094041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

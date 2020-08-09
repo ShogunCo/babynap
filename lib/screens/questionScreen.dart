@@ -148,9 +148,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   Future<bool> _onWillPop() async {
     return (await showDialog(
-      context: context,
-      builder: (context) =>
-          AlertDialog(
+          context: context,
+          builder: (context) => AlertDialog(
             title: Text('Eminmisiniz?'),
             content: Text('Testden çıkmak istiyor musunuz?'),
             actions: <Widget>[
@@ -164,7 +163,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               ),
             ],
           ),
-    )) ??
+        )) ??
         false;
   }
 
@@ -181,8 +180,31 @@ class _QuestionScreenState extends State<QuestionScreen> {
             child: Container(
               padding: EdgeInsets.all(20),
               color: Colors.cyan,
-              child: generateImageWidget(
-                  _questionBrain.listImage, _questionBrain.text),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: generateImageWidget(_questionBrain.listImage),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    _questionBrain.text,
+                    textScaleFactor: 1.0, // disables accessibility
+                    style: TextStyle(fontSize: 40.0),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+//                  Row(
+//                    children: scoreKeeper,
+//                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -221,17 +243,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
         );
         _speakRun("${status ? "Doğru" : "Yanlış"} bildin");
 
-        Timer(Duration(seconds: 3), () {
+        Timer(
+          Duration(seconds: 3),
+          () {
             _questionBrain.nextQuestion();
             _speakRun(_questionBrain.text);
-      },);
-
-    }
+          },
+        );
+      }
     });
   }
 
-  Row screenRow(String image1, String image2) =>
-      Row(
+  Row screenRow(String image1, String image2) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           resultButton(image1),
@@ -239,8 +262,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ],
       );
 
-  Expanded resultButton(String shape) =>
-      Expanded(
+  Expanded resultButton(String shape) => Expanded(
         child: FlatButton(
           child: Image.asset(
             'assets/images/$shape',
@@ -253,28 +275,13 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ),
       );
 
-  Widget generateImageWidget(List<String> strings, String text) {
+  List<Widget> generateImageWidget(List<String> strings) {
     List<Widget> list = List<Widget>();
+
     for (var i = 0; i < strings.length; i += 2) {
       list.add(screenRow(strings[i], strings[i + 1]));
     }
-
-    list.add(Text(
-      text,
-      textScaleFactor: 1.0, // disables accessibility
-      style: TextStyle(
-        fontSize: 35.0,
-      ),
-    ));
-
-    list.add(Row(
-      children: scoreKeeper,
-    ));
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: list,
-    );
+    return list;
   }
 
   @override
