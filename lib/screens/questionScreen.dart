@@ -5,9 +5,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:the_hero_brain/models/questionBrain.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
-import 'package:the_hero_brain/components/splashScreen.dart';
-import 'package:the_hero_brain/components/textToSpeech.dart';
-import 'package:the_hero_brain/models/widgets.dart';
+import 'package:the_hero_brain/screens/splashScreen.dart';
 
 enum TtsState { playing, stopped, paused, continued }
 
@@ -23,8 +21,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   QuestionBrain _questionBrain = QuestionBrain();
   List<Icon> scoreKeeper = [];
   bool status;
-
-  FlutterTts flutterTts;
+  FlutterTts tts;
   dynamic languages;
   String language = "tr-TR";
   double volume = 0.7;
@@ -33,100 +30,37 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   TtsState ttsState = TtsState.stopped;
 
-  get isPlaying => ttsState == TtsState.playing;
-
-  get isStopped => ttsState == TtsState.stopped;
-
-  get isPaused => ttsState == TtsState.paused;
-
-  get isContinued => ttsState == TtsState.continued;
-
   @override
   initState() {
     super.initState();
     initTts();
     _speakRun(_questionBrain.text);
-    //TextToSpeech(_questionBrain.text);
   }
 
   initTts() {
-    flutterTts = FlutterTts();
-
-    _getLanguages();
-
-    if (!kIsWeb) {
-      if (Platform.isAndroid) {
-        _getEngines();
-      }
-    }
-
-    flutterTts.setStartHandler(() {
-      setState(() {
-        print("Playing");
-        ttsState = TtsState.playing;
-      });
-    });
-
-    flutterTts.setCompletionHandler(() {
-      setState(() {
-        print("Complete");
-        ttsState = TtsState.stopped;
-      });
-    });
-
-    flutterTts.setCancelHandler(() {
-      setState(() {
-        print("Cancel");
-        ttsState = TtsState.stopped;
-      });
-    });
-
+    tts = FlutterTts();
+    tts.setStartHandler(() => setState(() => ttsState = TtsState.playing));
+    tts.setCompletionHandler(() => setState(() => ttsState = TtsState.stopped));
+    tts.setCancelHandler(() => setState(() => ttsState = TtsState.stopped));
     if (kIsWeb || Platform.isIOS) {
-      flutterTts.setPauseHandler(() {
-        setState(() {
-          print("Paused");
-          ttsState = TtsState.paused;
-        });
-      });
-
-      flutterTts.setContinueHandler(() {
-        setState(() {
-          print("Continued");
-          ttsState = TtsState.continued;
-        });
-      });
+      tts.setPauseHandler(() => setState(() => ttsState = TtsState.paused));
+      tts.setContinueHandler(
+          () => setState(() => ttsState = TtsState.continued));
     }
-
-    flutterTts.setErrorHandler((msg) {
-      setState(() {
-        print("error: $msg");
-        ttsState = TtsState.stopped;
-      });
-    });
-  }
-
-  Future _getLanguages() async {
-    languages = await flutterTts.getLanguages;
-    if (languages != null) setState(() => languages);
-  }
-
-  Future _getEngines() async {
-    var engines = await flutterTts.getEngines;
-    if (engines != null) {
-      for (dynamic engine in engines) {
-        print(engine);
-      }
-    }
+    tts.setErrorHandler((msg) => setState(() {
+          print("error: $msg");
+          ttsState = TtsState.stopped;
+        }));
   }
 
   Future _speak(String newVoiceText) async {
-    await flutterTts.setVolume(volume);
-    await flutterTts.setSpeechRate(rate);
-    await flutterTts.setPitch(pitch);
+    await tts.setVolume(volume);
+    await tts.setSpeechRate(rate);
+    await tts.setPitch(pitch);
 
     if (newVoiceText != null) {
       if (newVoiceText.isNotEmpty) {
-        var result = await flutterTts.speak(newVoiceText);
+        var result = await tts.speak(newVoiceText);
         if (result == 1) setState(() => ttsState = TtsState.playing);
       }
     }
@@ -134,7 +68,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   void _changeLanguage(String language) {
     setState(() {
-      flutterTts.setLanguage(language);
+      tts.setLanguage(language);
     });
   }
 
@@ -287,6 +221,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
   @override
   void dispose() {
     super.dispose();
-    flutterTts.stop();
+    tts.stop();
   }
 }
