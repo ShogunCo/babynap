@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:the_hero_brain/utilities/styles.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:the_hero_brain/screens/questionScreen.dart';
+import 'package:the_hero_brain/utilities/widgets.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -72,63 +73,68 @@ class _OnboardingScreenState extends State<OnboardingScreen>{
       imagePadding: EdgeInsets.zero,
     );
 
-    return IntroductionScreen(
-      key: introKey,
-      pages: [
-        PageViewModel(
-          title: "Kids and teens",
-          body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('onboarding0.png'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('onboarding1.png'),
-          footer: RaisedButton(
-            onPressed: () {
-              introKey.currentState?.animateScroll(0);
-            },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
+    return MaterialApp(
+      home: WillPopScope(
+        onWillPop: () => onWillPop(context),
+        child: IntroductionScreen(
+          key: introKey,
+          pages: [
+            PageViewModel(
+              title: "Kids and teens",
+              body:
+                  "Kids and teens can track their stocks 24/7 and place trades that you approve.",
+              image: _buildImage('onboarding0.png'),
+              decoration: pageDecoration,
             ),
-            color: Colors.lightBlue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
+            PageViewModel(
+              title: "Another title page",
+              body: "Another beautiful body text for this example onboarding",
+              image: _buildImage('onboarding1.png'),
+              footer: RaisedButton(
+                onPressed: () {
+                  introKey.currentState?.animateScroll(0);
+                },
+                child: const Text(
+                  'FooButton',
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.lightBlue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+              decoration: pageDecoration,
+            ),
+            PageViewModel(
+              title: "Title of last page",
+              bodyWidget: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text("Click on ", style: bodyStyle),
+                  Icon(Icons.edit),
+                  Text(" to edit a post", style: bodyStyle),
+                ],
+              ),
+              image: _buildImage('onboarding2.png'),
+              decoration: pageDecoration,
+            ),
+          ],
+          onDone: () => _onIntroEnd(context),
+          //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
+          showSkipButton: true,
+          skipFlex: 0,
+          nextFlex: 0,
+          skip: const Text('Skip'),
+          next: const Icon(Icons.arrow_forward),
+          done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+          dotsDecorator: const DotsDecorator(
+            size: Size(10.0, 10.0),
+            color: Color(0xFFBDBDBD),
+            activeSize: Size(22.0, 10.0),
+            activeShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(25.0)),
             ),
           ),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Title of last page",
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
-          image: _buildImage('onboarding2.png'),
-          decoration: pageDecoration,
-        ),
-      ],
-      onDone: () => _onIntroEnd(context),
-      //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
-      showSkipButton: true,
-      skipFlex: 0,
-      nextFlex: 0,
-      skip: const Text('Skip'),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
-      dotsDecorator: const DotsDecorator(
-        size: Size(10.0, 10.0),
-        color: Color(0xFFBDBDBD),
-        activeSize: Size(22.0, 10.0),
-        activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
     );

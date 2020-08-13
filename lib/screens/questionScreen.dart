@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:the_hero_brain/models/questionBrain.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
 import 'package:the_hero_brain/screens/splashScreen.dart';
+import 'package:the_hero_brain/utilities/widgets.dart';
 
 enum TtsState { playing, stopped, paused, continued }
 
@@ -80,36 +81,14 @@ class _QuestionScreenState extends State<QuestionScreen> {
     }
   }
 
-  Future<bool> _onWillPop() async {
-    return (await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Eminmisiniz?'),
-            content: Text('Testden çıkmak istiyor musunuz?'),
-            actions: <Widget>[
-              FlatButton(
-                onPressed: () => Navigator.of(context).pop(false),
-                child: Text('Hayır'),
-              ),
-              FlatButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                child: Text('Evet'),
-              ),
-            ],
-          ),
-        )) ??
-        false;
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
       debugShowCheckedModeBanner: false,
       home: WillPopScope(
-        onWillPop: _onWillPop,
+        onWillPop: () => onWillPop(context),
         child: Scaffold(
-          // Outer white container with padding
           body: SafeArea(
             child: Container(
               padding: EdgeInsets.all(20),

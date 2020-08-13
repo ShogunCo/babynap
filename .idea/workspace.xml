@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/fonts/cm_sans_serif_2012.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gifs/walkingchick.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utilities/styles.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/widgets.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/questionScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/questionScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/widgets.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="520098c4ec9d35af" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -113,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597021617460</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="onboarding pages redesigned. and added loading page to precedence of app">
+      <created>1597324242741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597324242749</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -122,7 +119,8 @@
     <MESSAGE value="added back button handle, splash screen, also a splash screen between every question." />
     <MESSAGE value="Question screen layout redesigned. Question text position changed and questions positions centered." />
     <MESSAGE value="code editing. TTS code size reduced." />
-    <option name="LAST_COMMIT_MESSAGE" value="code editing. TTS code size reduced." />
+    <MESSAGE value="onboarding pages redesigned. and added loading page to precedence of app" />
+    <option name="LAST_COMMIT_MESSAGE" value="onboarding pages redesigned. and added loading page to precedence of app" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="42" key="#Notifications" timestamp="1596109501637">
@@ -145,10 +143,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="232" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245241544" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1597021616800">
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1597324241934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597021616800" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597324241934" />
     <state x="64" y="104" width="1092" height="610" key="DiffContextDialog" timestamp="1596902991426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -161,22 +159,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="410" y="278" width="492" height="213" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109016648" />
-    <state width="359" height="435" key="GridCell.Tab.0.bottom" timestamp="1597267801190">
+    <state width="359" height="435" key="GridCell.Tab.0.bottom" timestamp="1597325582809">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="435" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597267801190" />
-    <state width="359" height="435" key="GridCell.Tab.0.center" timestamp="1597267801190">
+    <state width="359" height="435" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597325582809" />
+    <state width="359" height="435" key="GridCell.Tab.0.center" timestamp="1597325582808">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="435" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597267801190" />
-    <state width="359" height="435" key="GridCell.Tab.0.left" timestamp="1597267801190">
+    <state width="359" height="435" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597325582808" />
+    <state width="359" height="435" key="GridCell.Tab.0.left" timestamp="1597325582808">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="435" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597267801190" />
-    <state width="359" height="435" key="GridCell.Tab.0.right" timestamp="1597267801190">
+    <state width="359" height="435" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597325582808" />
+    <state width="359" height="435" key="GridCell.Tab.0.right" timestamp="1597325582808">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="435" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597267801190" />
+    <state width="359" height="435" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597325582808" />
     <state x="434" y="106" key="RollbackChangesDialog" timestamp="1597008786755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -185,10 +183,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596109136103" />
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1597021741441">
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1597324249688">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597021741441" />
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597324249688" />
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595518094041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
