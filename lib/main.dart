@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'screens/questionScreen.dart';
+import 'screens/onboarding_screen.dart';
 
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyApp(),
     ),
   );
@@ -17,6 +18,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return QuestionScreen();
+    return Splash();
   }
 }

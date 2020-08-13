@@ -24,6 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_tts: ^1.2.6
+  introduction_screen: ^1.0.9
+  shared_preferences: ^0.5.8
+  after_layout: ^1.0.7+2
 
 
 
@@ -49,6 +52,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/onboarding/
+    - assets/gifs/
+
+  fonts:
+    - family: CM Sans Serif
+      fonts:
+        - asset: assets/fonts/cm_sans_serif_2012.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
