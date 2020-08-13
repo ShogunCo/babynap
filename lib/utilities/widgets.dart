@@ -23,3 +23,8 @@ Future<bool> onWillPop(BuildContext context) async {
   )) ??
       false;
 }
+
+Future<T> pushPage<T>(BuildContext context, Widget page) {
+  return Navigator.of(context)
+      .push<T>(MaterialPageRoute(builder: (context) => page));
+}

@@ -154,6 +154,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           context,
           MaterialPageRoute(builder: (context) => SplashScreen(status)),
         );
+        //pushPage(context, SplashScreen(status));
         _speakRun("${status ? "Doğru" : "Yanlış"} bildin");
 
         Timer(
