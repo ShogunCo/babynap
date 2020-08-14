@@ -4,20 +4,16 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="added safe area on onb">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+    <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/questionScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/questionScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/splashScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splashScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/widgets.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="520098c4ec9d35af" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -118,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597325795342</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="debug back button handle">
+      <created>1597356054592</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597356054592</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -129,7 +132,8 @@
     <MESSAGE value="code editing. TTS code size reduced." />
     <MESSAGE value="onboarding pages redesigned. and added loading page to precedence of app" />
     <MESSAGE value="back button handle function moved to utilities folder in widgets.dart,&#10;added onboarding screen back button handle too" />
-    <option name="LAST_COMMIT_MESSAGE" value="back button handle function moved to utilities folder in widgets.dart,&#10;added onboarding screen back button handle too" />
+    <MESSAGE value="debug back button handle" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug back button handle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="42" key="#Notifications" timestamp="1596109501637">
@@ -152,10 +156,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="232" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245241544" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1597326081189">
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1597434058810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597326081189" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597434058810" />
     <state x="64" y="104" width="1092" height="610" key="DiffContextDialog" timestamp="1596902991426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -192,10 +196,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596109136103" />
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1597325808712">
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1597356060521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597325808712" />
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597356060521" />
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595518094041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
