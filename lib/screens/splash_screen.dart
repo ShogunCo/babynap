@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
-import 'package:the_hero_brain/screens/questionScreen.dart';
+import 'package:the_hero_brain/screens/question_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   bool status;

@@ -3,9 +3,9 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:the_hero_brain/models/questionBrain.dart';
+import 'package:the_hero_brain/models/question_brain.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
-import 'package:the_hero_brain/screens/splashScreen.dart';
+import 'package:the_hero_brain/screens/splash_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
 
 enum TtsState { playing, stopped, paused, continued }

@@ -1,9 +1,10 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:the_hero_brain/screens/welcome_screen.dart';
 import 'package:the_hero_brain/utilities/styles.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:the_hero_brain/screens/questionScreen.dart';
+import 'package:the_hero_brain/screens/question_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
 
 class Splash extends StatefulWidget {
@@ -17,13 +18,10 @@ class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
     bool _seen = (prefs.getBool('seen') ?? false);
 
     if (_seen) {
-//      Navigator.of(context).pushReplacement(
-//          new MaterialPageRoute(builder: (context) => new QuestionScreen()));
-      pushPage(context, QuestionScreen());
+      pushPage(context, WelcomeScreen());
     } else {
       await prefs.setBool('seen', true);
-//      Navigator.of(context).pushReplacement(
-//          new MaterialPageRoute(builder: (context) => new OnboardingScreen()));
+
       pushPage(context, OnboardingScreen());
     }
   }
