@@ -105,18 +105,34 @@ class _QuestionScreenState extends State<QuestionScreen> {
                       ),
                     ),
                   ),
-                  Text(
-                    _questionBrain.text,
-                    textScaleFactor: 1.0, // disables accessibility
-                    style: TextStyle(fontSize: 40.0),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
+
+//                  Text(
+//                    _questionBrain.text,
+//                    textScaleFactor: 1.0, // disables accessibility
+//                    style: TextStyle(fontSize: 40.0),
+//                  ),
+//                  SizedBox(
+//                    height: 50,
+//                  ),
 //                  Row(
 //                    children: scoreKeeper,
 //                  ),
                 ],
+              ),
+            ),
+          ),
+          bottomSheet: Container(
+            height: 90.0,
+            width: double.infinity,
+            color: Colors.white,
+            child: Center(
+              child: Text(
+                _questionBrain.text,
+                style: TextStyle(
+                  color: Color(0xFF5B16D0),
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
