@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:async';
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:the_hero_brain/models/question_brain.dart';
+import 'package:the_hero_brain/screens/resultScreen.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
 import 'package:the_hero_brain/screens/splash_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
+import 'package:the_hero_brain/utilities/tts_util.dart';
 
 enum TtsState { playing, stopped, paused, continued }
 
@@ -20,75 +19,25 @@ class _QuestionScreenState extends State<QuestionScreen> {
   // en-US
 
   QuestionBrain _questionBrain = QuestionBrain();
+  Tts tts = Tts();
   List<Icon> scoreKeeper = [];
   bool status;
-  FlutterTts tts;
-  dynamic languages;
-  String language = "tr-TR";
-  double volume = 0.7;
-  double pitch = 0.9;
-  double rate = 0.8;
-
-  TtsState ttsState = TtsState.stopped;
 
   @override
   initState() {
     super.initState();
-    initTts();
-    _speakRun(_questionBrain.text);
-  }
-
-  initTts() {
-    tts = FlutterTts();
-    tts.setStartHandler(() => setState(() => ttsState = TtsState.playing));
-    tts.setCompletionHandler(() => setState(() => ttsState = TtsState.stopped));
-    tts.setCancelHandler(() => setState(() => ttsState = TtsState.stopped));
-    if (kIsWeb || Platform.isIOS) {
-      tts.setPauseHandler(() => setState(() => ttsState = TtsState.paused));
-      tts.setContinueHandler(
-          () => setState(() => ttsState = TtsState.continued));
-    }
-    tts.setErrorHandler((msg) => setState(() {
-          print("error: $msg");
-          ttsState = TtsState.stopped;
-        }));
-  }
-
-  Future _speak(String newVoiceText) async {
-    await tts.setVolume(volume);
-    await tts.setSpeechRate(rate);
-    await tts.setPitch(pitch);
-
-    if (newVoiceText != null) {
-      if (newVoiceText.isNotEmpty) {
-        var result = await tts.speak(newVoiceText);
-        if (result == 1) setState(() => ttsState = TtsState.playing);
-      }
-    }
-  }
-
-  void _changeLanguage(String language) {
-    setState(() {
-      tts.setLanguage(language);
-    });
-  }
-
-  void _speakRun(String newVoiceText) {
-    if (!kIsWeb && Platform.isAndroid) {
-      _speak(newVoiceText);
-    } else {
-      _speak(newVoiceText);
-    }
+    // initTts();
+    tts.speak(_questionBrain.text);
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
-      debugShowCheckedModeBanner: false,
-      home: WillPopScope(
-        onWillPop: () => onWillPop(context),
-        child: Scaffold(
+    return WillPopScope(
+      onWillPop: () async => questionOnWillPop(context),
+      child: MaterialApp(
+        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
           body: SafeArea(
             child: Container(
               padding: EdgeInsets.all(20),
@@ -105,18 +54,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
                       ),
                     ),
                   ),
-
-//                  Text(
-//                    _questionBrain.text,
-//                    textScaleFactor: 1.0, // disables accessibility
-//                    style: TextStyle(fontSize: 40.0),
-//                  ),
-//                  SizedBox(
-//                    height: 50,
-//                  ),
-//                  Row(
-//                    children: scoreKeeper,
-//                  ),
                 ],
               ),
             ),
@@ -144,44 +81,42 @@ class _QuestionScreenState extends State<QuestionScreen> {
   void checkAnswer(String answer) {
     String correctAnswer = _questionBrain.answer;
 
-    setState(() {
-      if (_questionBrain.isFinished() == true) {
-        _questionBrain.reset();
-        scoreKeeper = [];
-        print("Finished");
-        _speakRun(_questionBrain.text);
-        //status = "finished";
+    if (_questionBrain.isFinished() == true) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ResultScreen()),
+      );
+    } else {
+      if (answer == correctAnswer) {
+        status = true;
+        scoreKeeper.add(Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
       } else {
-        if (answer == correctAnswer) {
-          status = true;
-          scoreKeeper.add(Icon(
-            Icons.check,
-            color: Colors.green,
-          ));
-        } else {
-          status = false;
-          scoreKeeper.add(Icon(
-            Icons.close,
-            color: Colors.red,
-          ));
-        }
-
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SplashScreen(status)),
-        );
-        //pushPage(context, SplashScreen(status));
-        _speakRun("${status ? "Doğru" : "Yanlış"} bildin");
-
-        Timer(
-          Duration(seconds: 3),
-          () {
-            _questionBrain.nextQuestion();
-            _speakRun(_questionBrain.text);
-          },
-        );
+        status = false;
+        scoreKeeper.add(Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
       }
-    });
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SplashScreen(status)),
+      );
+      //pushPage(context, SplashScreen(status));
+
+      Timer(
+        Duration(seconds: 3),
+        () {
+          setState(() {
+            _questionBrain.nextQuestion();
+            tts.speak(_questionBrain.text);
+          });
+        },
+      );
+    }
   }
 
   Row screenRow(String image1, String image2) => Row(
@@ -212,11 +147,5 @@ class _QuestionScreenState extends State<QuestionScreen> {
       list.add(screenRow(strings[i], strings[i + 1]));
     }
     return list;
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    tts.stop();
   }
 }

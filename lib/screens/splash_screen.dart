@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:the_hero_brain/utilities/widgets.dart';
+import 'package:the_hero_brain/utilities/tts_util.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
-import 'package:the_hero_brain/screens/question_screen.dart';
 
+// ignore: must_be_immutable
 class SplashScreen extends StatefulWidget {
   bool status;
 
@@ -15,14 +15,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   bool status;
+  Tts tts = Tts();
 
   _SplashScreenState(this.status);
 
   @override
   void initState() {
     super.initState();
-
+    tts.speak("${status ? "Doğru" : "Yanlış"} bildin");
     Timer(Duration(seconds: 3), () => Navigator.of(context).pop(false));
   }
 

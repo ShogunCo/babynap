@@ -35,7 +35,7 @@ class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
       onWillPop: () => Future.value(false),
       child: Scaffold(
         body: Center(
-          child: Text('Loading...'),
+          child: Text("Yükleniyor..."),
         ),
       ),
     );
@@ -53,7 +53,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>{
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => QuestionScreen()),
+      MaterialPageRoute(builder: (_) => WelcomeScreen()),
     );
   }
 

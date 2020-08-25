@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:the_hero_brain/screens/question_screen.dart';
+import 'package:the_hero_brain/utilities/widgets.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -12,39 +13,42 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => QuestionScreen()),
-            );
-          },
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/babynap_bg.jpg'),
-                  fit: BoxFit.cover),
-            ),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Center(
-                    child: Image.network('https://i.gifer.com/YTup.gif'),
-                  ),
-                  SizedBox(
-                    height: 240,
-                  ),
-                  Text(
-                    "$tapStrTr",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
+    return WillPopScope(
+      onWillPop:() async => appOnWillPop(context),
+      child: Scaffold(
+        body: SafeArea(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => QuestionScreen()),
+              );
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/babynap_bg.jpg'),
+                    fit: BoxFit.cover),
+              ),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Center(
+                      child: Image.network('https://i.gifer.com/YTup.gif'),
                     ),
-                  )
-                ]),
+                    SizedBox(
+                      height: 240,
+                    ),
+                    Text(
+                      "$tapStrTr",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                      ),
+                    )
+                  ]),
+            ),
           ),
         ),
       ),

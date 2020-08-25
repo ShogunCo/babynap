@@ -1,4 +1,3 @@
+abstract class TtsEvent {}
 
-class TtsEvent {
-
-}
+class PlayEvent extends TtsEvent {}
