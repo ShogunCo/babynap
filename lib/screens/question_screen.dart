@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:the_hero_brain/models/question_brain.dart';
 import 'package:the_hero_brain/screens/resultScreen.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
-import 'package:the_hero_brain/screens/splash_screen.dart';
+import 'package:the_hero_brain/screens/feedBack_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
 import 'package:the_hero_brain/utilities/tts_util.dart';
 
@@ -20,7 +20,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   QuestionBrain _questionBrain = QuestionBrain();
   Tts tts = Tts();
-  List<Icon> scoreKeeper = [];
+
+  //List<bool> scoreKeeper = [];
+  int trueAnswer = 0;
+  int falseAnswer = 0;
   bool status;
 
   @override
@@ -84,26 +87,23 @@ class _QuestionScreenState extends State<QuestionScreen> {
     if (_questionBrain.isFinished() == true) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ResultScreen()),
+        MaterialPageRoute(
+            builder: (context) => ResultScreen(trueAnswer, falseAnswer)),
       );
     } else {
       if (answer == correctAnswer) {
         status = true;
-        scoreKeeper.add(Icon(
-          Icons.check,
-          color: Colors.green,
-        ));
+        //scoreKeeper.add(true);
+        trueAnswer++;
       } else {
         status = false;
-        scoreKeeper.add(Icon(
-          Icons.close,
-          color: Colors.red,
-        ));
+        //scoreKeeper.add(false);
+        falseAnswer++;
       }
 
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => SplashScreen(status)),
+        MaterialPageRoute(builder: (context) => FeedBackScreen(status)),
       );
       //pushPage(context, SplashScreen(status));
 

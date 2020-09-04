@@ -1,30 +1,26 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:the_hero_brain/utilities/tts_util.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
 
-// ignore: must_be_immutable
-class SplashScreen extends StatefulWidget {
-  bool status;
+class FeedBackScreen extends StatefulWidget {
+  final bool status;
+
+  FeedBackScreen(this.status);
 
   @override
-  _SplashScreenState createState() => new _SplashScreenState(status);
+  _FeedBackScreenState createState() => new _FeedBackScreenState();
 
-  SplashScreen(this.status);
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _FeedBackScreenState extends State<FeedBackScreen> {
 
-  bool status;
   Tts tts = Tts();
-
-  _SplashScreenState(this.status);
 
   @override
   void initState() {
     super.initState();
-    tts.speak("${status ? "Doğru" : "Yanlış"} bildin");
+    tts.speak("${widget.status ? "Doğru" : "Yanlış"} bildin");
     Timer(Duration(seconds: 3), () => Navigator.of(context).pop(false));
   }
 
@@ -40,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
           body: SafeArea(
             child: Center(
               child: Text(
-                "${status ? "Doğru" : "Yanlış"} bildin",
+                "${widget.status ? "Doğru" : "Yanlış"} bildin",
                 textScaleFactor: 1.0, // disables accessibility
                 style: TextStyle(
                   fontSize: 35.0,
