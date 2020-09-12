@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/models/content.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/question_brain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/question_brain.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/question_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/question_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/resultScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/resultScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/feedBack_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/tts_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/tts_util.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +19,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="520098c4ec9d35af" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -138,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598390923679</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="In this commit, images and texts appear randomly. There are many text more then one. Images and text taken as json.">
+      <created>1599225807352</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1599225807352</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -150,7 +154,8 @@
     <MESSAGE value="onboarding pages redesigned. and added loading page to precedence of app" />
     <MESSAGE value="back button handle function moved to utilities folder in widgets.dart,&#10;added onboarding screen back button handle too" />
     <MESSAGE value="tts usage is fixed. We can use tts class, that is in tts_utility file, in any screens. Now tts usage is stable." />
-    <option name="LAST_COMMIT_MESSAGE" value="tts usage is fixed. We can use tts class, that is in tts_utility file, in any screens. Now tts usage is stable." />
+    <MESSAGE value="In this commit, images and texts appear randomly. There are many text more then one. Images and text taken as json." />
+    <option name="LAST_COMMIT_MESSAGE" value="In this commit, images and texts appear randomly. There are many text more then one. Images and text taken as json." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="42" key="#Notifications" timestamp="1596109501637">
@@ -173,10 +178,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="232" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245241544" />
-    <state x="315" y="0" key="CommitChangelistDialog2" timestamp="1598390922678">
+    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1599225806562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="315" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1598390922678" />
+    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1599225806562" />
     <state x="64" y="104" width="1092" height="610" key="DiffContextDialog" timestamp="1596902991426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -189,22 +194,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="410" y="278" width="492" height="213" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109016648" />
-    <state width="359" height="593" key="GridCell.Tab.0.bottom" timestamp="1598995348253">
+    <state width="359" height="497" key="GridCell.Tab.0.bottom" timestamp="1599876046626">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="593" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598995348253" />
-    <state width="359" height="593" key="GridCell.Tab.0.center" timestamp="1598995348252">
+    <state width="359" height="497" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599876046626" />
+    <state width="359" height="497" key="GridCell.Tab.0.center" timestamp="1599876046626">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="593" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598995348252" />
-    <state width="359" height="593" key="GridCell.Tab.0.left" timestamp="1598995348252">
+    <state width="359" height="497" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599876046626" />
+    <state width="359" height="497" key="GridCell.Tab.0.left" timestamp="1599876046626">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="593" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598995348252" />
-    <state width="359" height="593" key="GridCell.Tab.0.right" timestamp="1598995348253">
+    <state width="359" height="497" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599876046626" />
+    <state width="359" height="497" key="GridCell.Tab.0.right" timestamp="1599876046626">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="359" height="593" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598995348253" />
+    <state width="359" height="497" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599876046626" />
     <state x="434" y="106" key="RollbackChangesDialog" timestamp="1597008786755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -213,18 +218,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598198716223" />
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1598390927756">
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1599225821164">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598390927756" />
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599225821164" />
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595518094041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1595518094041" />
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1598198545221">
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1599874848106">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1598198545221" />
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1599874848106" />
     <state x="347" y="176" key="run.anything.popup" timestamp="1595939477333">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

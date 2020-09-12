@@ -42,39 +42,38 @@ class _QuestionScreenState extends State<QuestionScreen> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: SafeArea(
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.cyan,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+            child: LayoutBuilder(builder:
+                (BuildContext context, BoxConstraints viewportConstraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: viewportConstraints.maxHeight,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GridView.count(
+                        shrinkWrap: true,
+                        primary: false,
+                        padding: const EdgeInsets.all(20),
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        crossAxisCount: 2,
                         children: generateImageWidget(_questionBrain.listImage),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-          ),
-          bottomSheet: Container(
-            height: 90.0,
-            width: double.infinity,
-            color: Colors.white,
-            child: Center(
-              child: Text(
-                _questionBrain.text,
-                style: TextStyle(
-                  color: Color(0xFF5B16D0),
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
                 ),
-              ),
+              );
+            }),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () => tts.speak(_questionBrain.text),
+            child: Icon(
+              Icons.record_voice_over,
+              color: Colors.white,
             ),
+            backgroundColor: Colors.green,
           ),
         ),
       ),
@@ -119,33 +118,29 @@ class _QuestionScreenState extends State<QuestionScreen> {
     }
   }
 
-  Row screenRow(String image1, String image2) => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          resultButton(image1),
-          resultButton(image2),
-        ],
-      );
-
-  Expanded resultButton(String shape) => Expanded(
-        child: FlatButton(
-          child: Image.asset(
-            'assets/images/$shape',
-            height: 80,
-            width: 80,
-          ),
-          onPressed: () {
-            checkAnswer(shape);
-          },
+  FlatButton resultButton(String shape) => FlatButton(
+        child: Image.asset(
+          'assets/images/$shape',
+          height: 80,
+          width: 80,
         ),
+        onPressed: () {
+          checkAnswer(shape);
+        },
       );
 
   List<Widget> generateImageWidget(List<String> strings) {
     List<Widget> list = List<Widget>();
-
-    for (var i = 0; i < strings.length; i += 2) {
-      list.add(screenRow(strings[i], strings[i + 1]));
+    for (int i = 0; i < strings.length; i += 1) {
+      list.add(
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: resultButton(strings[i]),
+          color: Colors.indigo,
+        ),
+      );
     }
+
     return list;
   }
 }

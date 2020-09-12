@@ -5,7 +5,7 @@ class Tts {
   String language = "tr-TR";
 
   Tts({this.language}) {
-    setLanguage(language);
+    //setLanguage(language);
   }
 
   Future setLanguage(String language) async => await tts.setLanguage(language);
