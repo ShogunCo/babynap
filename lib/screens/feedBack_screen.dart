@@ -29,7 +29,7 @@ class _FeedBackScreenState extends State<FeedBackScreen> {
     return WillPopScope(
       onWillPop: () => Future.value(false),
       child: MaterialApp(
-        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: scaffoldBC),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           // Outer white container with padding

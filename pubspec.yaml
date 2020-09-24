@@ -57,6 +57,67 @@ flutter:
     - assets/images/
     - assets/images/onboarding/
     - assets/gifs/
+    - assets/images/nature/cloud/
+    - assets/images/nature/desert/
+    - assets/images/nature/earth/
+    - assets/images/nature/lightning/
+    - assets/images/nature/moon/
+    - assets/images/nature/mountain/
+    - assets/images/nature/rain/
+    - assets/images/nature/rainbow/
+    - assets/images/nature/river/
+    - assets/images/nature/sea/
+    - assets/images/nature/snow/
+    - assets/images/nature/star/
+    - assets/images/nature/stone/
+    - assets/images/nature/sun/
+    - assets/images/nature/waterfall/
+    - assets/images/animal/bear/
+    - assets/images/animal/bird/
+    - assets/images/animal/cat/
+    - assets/images/animal/chicken/
+    - assets/images/animal/cow/
+    - assets/images/animal/dog/
+    - assets/images/animal/elephant/
+    - assets/images/animal/giraffe/
+    - assets/images/animal/horse/
+    - assets/images/animal/ladybug/
+    - assets/images/animal/lion/
+    - assets/images/animal/panda/
+    - assets/images/animal/penguin/
+    - assets/images/animal/sheep/
+    - assets/images/animal/turtle/
+    - assets/images/plant/apple/
+    - assets/images/plant/banana/
+    - assets/images/plant/beans/
+    - assets/images/plant/carrot/
+    - assets/images/plant/cucumber/
+    - assets/images/plant/eggplant/
+    - assets/images/plant/flower/
+    - assets/images/plant/grape/
+    - assets/images/plant/melon/
+    - assets/images/plant/mushrooms/
+    - assets/images/plant/pepper/
+    - assets/images/plant/pumpkin/
+    - assets/images/plant/strawberry/
+    - assets/images/plant/tomato/
+    - assets/images/plant/tree/
+    - assets/images/plant/watermelon/
+    - assets/images/thing/bed/
+    - assets/images/thing/book/
+    - assets/images/thing/chair/
+    - assets/images/thing/door/
+    - assets/images/thing/dress/
+    - assets/images/thing/fork/
+    - assets/images/thing/glass/
+    - assets/images/thing/house/
+    - assets/images/thing/lamp/
+    - assets/images/thing/plate/
+    - assets/images/thing/scissors/
+    - assets/images/thing/shoe/
+    - assets/images/thing/spoon/
+    - assets/images/thing/tap/
+    - assets/images/thing/window/
 
   fonts:
     - family: CM Sans Serif

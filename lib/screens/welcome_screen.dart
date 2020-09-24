@@ -12,6 +12,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   final tapStrEn = "Tap To Start!";
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop:() async => appOnWillPop(context),

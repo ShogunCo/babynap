@@ -1,3 +1,5 @@
 import 'dart:ui';
 
-final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+import 'package:flutter/material.dart';
+
+final Color scaffoldBC = Color.fromRGBO(242, 242, 242, 10);

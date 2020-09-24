@@ -3,11 +3,8 @@ import 'dart:async';
 import 'package:the_hero_brain/models/question_brain.dart';
 import 'package:the_hero_brain/screens/resultScreen.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
-import 'package:the_hero_brain/screens/feedBack_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
 import 'package:the_hero_brain/utilities/tts_util.dart';
-
-enum TtsState { playing, stopped, paused, continued }
 
 class QuestionScreen extends StatefulWidget {
   @override
@@ -20,8 +17,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   QuestionBrain _questionBrain = QuestionBrain();
   Tts tts = Tts();
-
-  //List<bool> scoreKeeper = [];
   int trueAnswer = 0;
   int falseAnswer = 0;
   bool status;
@@ -29,7 +24,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   @override
   initState() {
     super.initState();
-    // initTts();
+    _questionBrain.reset(); // add later
     tts.speak(_questionBrain.text);
   }
 
@@ -38,7 +33,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return WillPopScope(
       onWillPop: () async => questionOnWillPop(context),
       child: MaterialApp(
-        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: scaffoldBC),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: SafeArea(
@@ -54,10 +49,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
                     children: [
                       GridView.count(
                         shrinkWrap: true,
+
                         primary: false,
-                        padding: const EdgeInsets.all(20),
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
+                        //padding: EdgeInsets.all(20),
+                        //crossAxisSpacing: 10,
+                        //mainAxisSpacing: 10,
                         crossAxisCount: 2,
                         children: generateImageWidget(_questionBrain.listImage),
                       ),
@@ -83,46 +79,64 @@ class _QuestionScreenState extends State<QuestionScreen> {
   void checkAnswer(String answer) {
     String correctAnswer = _questionBrain.answer;
 
-    if (_questionBrain.isFinished() == true) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ResultScreen(trueAnswer, falseAnswer)),
-      );
+    if (answer == correctAnswer) {
+      status = true;
+      trueAnswer++;
     } else {
-      if (answer == correctAnswer) {
-        status = true;
-        //scoreKeeper.add(true);
-        trueAnswer++;
-      } else {
-        status = false;
-        //scoreKeeper.add(false);
-        falseAnswer++;
-      }
+      status = false;
+      falseAnswer++;
+    }
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => FeedBackScreen(status)),
-      );
-      //pushPage(context, SplashScreen(status));
+    showDialog(
+      barrierDismissible: false,
+      //barrierColor: Colors.brown,
+      context: context,
+      builder: (context) {
+        Future.delayed(Duration(seconds: 3), () {
+          Navigator.of(context).pop(true);
+        });
 
+        tts.speak("${status ? "Doğru" : "Yanlış"} bildin");
+
+        return AlertDialog(
+          title: Text("${status ? "Harika" : "Olamaz"}"),
+          content: Text(
+            "${status ? "Doğru" : "Yanlış"} bildin",
+            textScaleFactor: 1.0, // disables accessibility
+            style: TextStyle(
+              fontSize: 35.0,
+            ),
+          ),
+        );
+      },
+    );
+
+    if (_questionBrain.isFinished() == false) {
+      Timer(Duration(seconds: 3), () => tts.speak(_questionBrain.text));
+
+      setState(() {
+        _questionBrain.nextQuestion();
+      });
+    } else {
       Timer(
-        Duration(seconds: 3),
-        () {
-          setState(() {
-            _questionBrain.nextQuestion();
-            tts.speak(_questionBrain.text);
-          });
-        },
-      );
+          Duration(seconds: 3, milliseconds: 100),
+          () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        ResultScreen(trueAnswer, falseAnswer)),
+              ));
     }
   }
 
   FlatButton resultButton(String shape) => FlatButton(
-        child: Image.asset(
-          'assets/images/$shape',
-          height: 80,
-          width: 80,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(24.0),
+          child: Image.asset(
+            'assets/images/$shape.jpg',
+            //height: 100,
+            //width: 100,
+          ),
         ),
         onPressed: () {
           checkAnswer(shape);
@@ -134,13 +148,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
     for (int i = 0; i < strings.length; i += 1) {
       list.add(
         Container(
-          padding: const EdgeInsets.all(8),
+          //padding: const EdgeInsets.all(0),
           child: resultButton(strings[i]),
-          color: Colors.indigo,
+          //color: Colors.indigo,
         ),
       );
     }
-
     return list;
   }
 }

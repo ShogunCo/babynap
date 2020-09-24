@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:the_hero_brain/utilities/widgets.dart';
+import 'package:the_hero_brain/screens/welcome_screen.dart';
 import 'package:the_hero_brain/widgets/constants.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -17,12 +15,13 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () => Future.value(false),
       child: MaterialApp(
-        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: scaffoldBC),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: SafeArea(
@@ -56,6 +55,30 @@ class _ResultScreenState extends State<ResultScreen> {
                     ),
                   ],
                 ),
+              ),
+            ),
+          ),
+          bottomNavigationBar: FlatButton(
+            color: Colors.redAccent,
+            onPressed: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => WelcomeScreen(),
+              ),
+            ),
+            child: Container(
+              height: 100,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text("TEKRAR OYNA",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18)),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
