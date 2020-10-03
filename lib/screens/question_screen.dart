@@ -7,6 +7,11 @@ import 'package:the_hero_brain/utilities/widgets.dart';
 import 'package:the_hero_brain/utilities/tts_util.dart';
 
 class QuestionScreen extends StatefulWidget {
+
+  final int _command;
+
+  QuestionScreen(this._command);
+
   @override
   _QuestionScreenState createState() => _QuestionScreenState();
 }
@@ -24,6 +29,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   @override
   initState() {
     super.initState();
+    _questionBrain.prepareQuestions(widget._command);
     _questionBrain.reset(); // add later
     tts.speak(_questionBrain.text);
   }
@@ -57,20 +63,45 @@ class _QuestionScreenState extends State<QuestionScreen> {
                         crossAxisCount: 2,
                         children: generateImageWidget(_questionBrain.listImage),
                       ),
+
                     ],
                   ),
                 ),
               );
             }),
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => tts.speak(_questionBrain.text),
-            child: Icon(
-              Icons.record_voice_over,
-              color: Colors.white,
+
+          floatingActionButton: Container(
+            padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                
+                Row(
+                  children: [
+                    Text((QuestionBrain.questionNumber + 1).toString(), style: TextStyle(
+                      fontSize: 50,
+                      color: Colors.green
+                    ),),
+                    Text(" / " + widget._command.toString(), style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.grey
+                    ),),
+                  ],
+                ),
+
+                FloatingActionButton(
+                onPressed: () => tts.speak(_questionBrain.text),
+                child: Icon(
+                  Icons.record_voice_over,
+                  color: Colors.white,
+                ),
+                backgroundColor: Colors.green,
+              ),],
             ),
-            backgroundColor: Colors.green,
-          ),
+          )
+
+
         ),
       ),
     );

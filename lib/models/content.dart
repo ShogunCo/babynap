@@ -23,6 +23,26 @@ final String receivedTextJson = """
     "item5": {
         "text1": "Senden bulmanı istediğim bir şey var. Onun adı ",
         "text2": ""
+    },
+    "item6": {
+        "text1": "Başaracağını biliyorum. Hangisi  ",
+        "text2": ""
+    },
+    "item7": {
+        "text1": "İçlerinden hangisi ",
+        "text2": ""
+    },
+    "item8": {
+        "text1": "Akıllı çocukları kimse tutmaz. ",
+        "text2": " görüyorsan göster bakalım."
+    },
+    "item9": {
+        "text1": "Bulacağına inanıyorum. Hangisi ",
+        "text2": ""
+    },
+    "item10": {
+        "text1": "",
+        "text2": " görüyorsan göster bakalım."
     }
 }
 """;
@@ -106,7 +126,7 @@ final String natureJson = """
            "en": "earth",
            "tr": "dünya"
           },
-   "3": { "n": 7,
+   "3": { "n": 6,
            "en": "lightning",
            "tr": "şimşek"
           },

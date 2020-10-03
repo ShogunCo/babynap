@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:the_hero_brain/screens/question_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
+import 'package:the_hero_brain/screens/preparation_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: GestureDetector(
             onTap: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => QuestionScreen()),
+                MaterialPageRoute(builder: (_) => PreparationScreen()),
               );
             },
             child: Container(

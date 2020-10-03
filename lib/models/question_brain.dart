@@ -7,6 +7,7 @@ class QuestionBrain {
   static int _questionNumber = 0;
   List<Question> _questionBank = [];
   final Map<String, dynamic> _nature = json.decode(natureJson);
+
   final Map<String, dynamic> _plant = json.decode(plantJson);
   final Map<String, dynamic> _animal = json.decode(animalJson);
   final Map<String, dynamic> _thing = json.decode(thingJson);
@@ -16,13 +17,7 @@ class QuestionBrain {
   String _img;
   String _tr;
 
-
-  QuestionBrain() {
-    _prepareQuestions();
-  }
-
   void _generateRandomImage() {
-
     Random random = new Random();
 
     final int randCate = random.nextInt(4);
@@ -65,7 +60,7 @@ class QuestionBrain {
   void _generateRandomImageList(int size) {
     _newImg.clear();
     _newTr.clear();
-    while(_newTr.length < size) {
+    while (_newTr.length < size) {
       _generateRandomImage();
       if (!_newTr.contains(_tr)) {
         _newImg.add(_img);
@@ -74,51 +69,57 @@ class QuestionBrain {
     }
   }
 
-  void _prepareQuestions() {
-
-    var rndTextList = new List<int>.generate(_qText.length, (int index) => index)
+  void prepareQuestions(int command) {
+    var rndText = new List<int>.generate(_qText.length, (int index) => index)
       ..shuffle();
-
-
-
     int j = 0;
-    for (int i = 0; i < 2; i++, j++) {
-      _generateRandomImageList(2);
-      _questionBank.add(
-        Question(
-          [
-            _newImg[0],
-            _newImg[1],
-          ]..shuffle(),
-          _qText["item" + rndTextList[j % _qText.length].toString()]["text1"] +
-              _newTr[0] +
-              _qText["item" + rndTextList[j % _qText.length].toString()]["text2"],
-          _newImg[0],
-        ),
-      );
+
+    switch(command) {
+
+      case 5:
+        _questionTwo(5, j, rndText);
+        break;
+
+      case 10:
+        _questionTwo(5, j, rndText);
+        j += 5;
+        _questionFour(5, j, rndText);
+        break;
+
+      case 20:
+        _questionTwo(8, j, rndText);
+        j += 8;
+        _questionFour(12, j, rndText);
+        break;
+
+      case 25:
+        _questionTwo(10, j, rndText);
+        j += 10;
+        _questionFour(10, j, rndText);
+        j += 10;
+        _questionSix(5, j, rndText);
+        break;
+
+      case 35:
+        _questionTwo(5, j, rndText);
+        j += 5;
+        _questionFour(15, j, rndText);
+        j += 15;
+        _questionSix(15, j, rndText);
+        break;
+
+      case 40:
+        _questionTwo(5, j, rndText);
+        j += 5;
+        _questionFour(10, j, rndText);
+        j += 10;
+        _questionSix(25, j, rndText);
+        break;
     }
+  }
 
-
-    for (int i = 0; i < 2; i++, j++) {
-      _generateRandomImageList(4);
-      _questionBank.add(
-        Question(
-          [
-            _newImg[0],
-            _newImg[1],
-            _newImg[2],
-            _newImg[3],
-          ]..shuffle(),
-          _qText["item" + rndTextList[j % _qText.length].toString()]["text1"] +
-              _newTr[0] +
-              _qText["item" + rndTextList[j % _qText.length].toString()]["text2"],
-          _newImg[0],
-        ),
-      );
-    }
-
-
-    for (int i = 0; i < 2; i++, j++) {
+  void _questionSix(int number, int j, List rndText) {
+    for (int i = 0; i < number; i++, j++) {
       _generateRandomImageList(6);
       _questionBank.add(
         Question(
@@ -130,14 +131,54 @@ class QuestionBrain {
             _newImg[4],
             _newImg[5],
           ]..shuffle(),
-          _qText["item" + rndTextList[j % _qText.length].toString()]["text1"] +
+          _qText["item" + rndText[j % _qText.length].toString()]["text1"] +
               _newTr[0] +
-              _qText["item" + rndTextList[j % _qText.length].toString()]["text2"],
+              _qText["item" + rndText[j % _qText.length].toString()]["text2"],
           _newImg[0],
         ),
       );
     }
   }
+
+  void _questionFour(int number, int j, List rndText) {
+    for (int i = 0; i < number; i++, j++) {
+      _generateRandomImageList(4);
+      _questionBank.add(
+        Question(
+          [
+            _newImg[0],
+            _newImg[1],
+            _newImg[2],
+            _newImg[3],
+          ]..shuffle(),
+          _qText["item" + rndText[j % _qText.length].toString()]["text1"] +
+              _newTr[0] +
+              _qText["item" + rndText[j % _qText.length].toString()]["text2"],
+          _newImg[0],
+        ),
+      );
+    }
+  }
+
+  void _questionTwo(int number, int j, List rndText) {
+    for (int i = 0; i < number; i++, j++) {
+      _generateRandomImageList(2);
+      _questionBank.add(
+        Question(
+          [
+            _newImg[0],
+            _newImg[1],
+          ]..shuffle(),
+          _qText["item" + rndText[j % _qText.length].toString()]["text1"] +
+              _newTr[0] +
+              _qText["item" + rndText[j % _qText.length].toString()]["text2"],
+          _newImg[0],
+        ),
+      );
+    }
+  }
+
+  static int get questionNumber => _questionNumber;
 
   List get listImage => _questionBank[_questionNumber].listImage;
 
