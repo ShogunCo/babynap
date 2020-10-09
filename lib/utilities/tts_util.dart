@@ -4,8 +4,8 @@ class Tts {
   FlutterTts tts = FlutterTts();
   String language = "tr-TR";
 
-  Tts({this.language}) {
-    //setLanguage(language);
+  Tts() {
+    tts.setLanguage(language);
   }
 
   Future setLanguage(String language) async => await tts.setLanguage(language);

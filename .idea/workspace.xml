@@ -4,21 +4,36 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/screens/preparation_screen.dart" afterDir="false" />
+    <list default="true" id="08011146-dc2f-4fd0-a6d3-434392489a5c" name="Default Changelist" comment="fixed setLanguage method, reviewed some issue">
+      <change afterPath="$PROJECT_DIR$/assets/gifs/ant2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/boy.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/dogs.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/family1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/family2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/family3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/firework.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/flowers.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/girl.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/greenStar.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/lion.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gifs/star.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/ic_launcher_new.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/ic_launcher_new.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/nature/lightning/lightning_6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/nature/lightning/lightning_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/gifs/walkingchick.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/tts_bloc.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/tts_event.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/tts_state.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/models/content.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/content.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/question_brain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/question_brain.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/onboarding_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preparation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preparation_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/question_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/question_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/welcome_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/welcome_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/resultScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/resultScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/tts_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/tts_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,34 +63,37 @@
     </option>
   </component>
   <component name="ProjectId" id="1f5ouEhv5GjI6c94tplBJrXwcHp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/gifs" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\images" />
-      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\gifs" />
-      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib\screens" />
-      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib" />
-      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\images\intro_slider_images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\images" />
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib\utilities" />
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib\screens" />
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\android\app\src\main\res\drawable" />
       <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\android\app\src\main\res\mipmap" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\gifs" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\images" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib\screens" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\lib" />
+      <recent name="C:\Users\yilmaz\AndroidStudioProjects\babynap\assets\images\intro_slider_images" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -166,10 +184,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600913645289</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added catalog, logos, question number on question_screen.dart">
+      <created>1601684020874</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601684020874</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit" />
     <MESSAGE value="added extra example images, answer check and designed screens." />
     <MESSAGE value="added back button handle, splash screen, also a splash screen between every question." />
@@ -181,9 +207,15 @@
     <MESSAGE value="In this commit, images and texts appear randomly. There are many text more then one. Images and text taken as json." />
     <MESSAGE value="GridView added." />
     <MESSAGE value="new images added. display randomly" />
-    <option name="LAST_COMMIT_MESSAGE" value="new images added. display randomly" />
+    <MESSAGE value="added catalog, logos, question number on question_screen.dart" />
+    <MESSAGE value="fixed setLanguage method, reviewed some issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed setLanguage method, reviewed some issue" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Images" timestamp="1602270927112">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Images/0.0.1366.728@0.0.1366.728" timestamp="1602270927112" />
     <state x="275" y="42" key="#Notifications" timestamp="1596109501637">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -208,10 +240,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="538" y="129" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1601642576132" />
-    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1600913643331">
+    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1602271611568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1600913643331" />
+    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602271611568" />
     <state x="64" y="104" width="1092" height="610" key="DiffContextDialog" timestamp="1596902991426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -224,22 +256,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="410" y="278" width="492" height="213" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1596109016648" />
-    <state width="360" height="593" key="GridCell.Tab.0.bottom" timestamp="1601680134133">
+    <state width="360" height="514" key="GridCell.Tab.0.bottom" timestamp="1602271566644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="360" height="593" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601680134133" />
-    <state width="360" height="593" key="GridCell.Tab.0.center" timestamp="1601680134133">
+    <state width="360" height="514" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602271566644" />
+    <state width="360" height="514" key="GridCell.Tab.0.center" timestamp="1602271566644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="360" height="593" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601680134133" />
-    <state width="360" height="593" key="GridCell.Tab.0.left" timestamp="1601680134133">
+    <state width="360" height="514" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602271566644" />
+    <state width="360" height="514" key="GridCell.Tab.0.left" timestamp="1602271566643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="360" height="593" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601680134133" />
-    <state width="360" height="593" key="GridCell.Tab.0.right" timestamp="1601680134133">
+    <state width="360" height="514" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602271566643" />
+    <state width="360" height="514" key="GridCell.Tab.0.right" timestamp="1602271566644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="360" height="593" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601680134133" />
+    <state width="360" height="514" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602271566644" />
     <state x="434" y="106" key="RollbackChangesDialog" timestamp="1597008786755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -248,10 +280,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598198716223" />
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1600913653450">
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2" timestamp="1601684034697">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600913653450" />
+    <state x="275" y="117" width="1078" height="534" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601684034697" />
     <state x="100" y="100" width="1166" height="568" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595518094041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

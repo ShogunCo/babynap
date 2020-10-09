@@ -33,7 +33,7 @@ final String receivedTextJson = """
         "text2": ""
     },
     "item8": {
-        "text1": "Akıllı çocukları kimse tutmaz. ",
+        "text1": "Akıllı çocukları kimse tutamaz. ",
         "text2": " görüyorsan göster bakalım."
     },
     "item9": {

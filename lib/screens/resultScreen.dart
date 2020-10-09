@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -15,6 +17,7 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
+  Random rnd = Random();
 
   @override
   Widget build(BuildContext context) {
@@ -26,33 +29,70 @@ class _ResultScreenState extends State<ResultScreen> {
         home: Scaffold(
           body: SafeArea(
             child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(rnd.nextInt(3) == 0
+                      ? "assets/gifs/flowers.gif"
+                      : rnd.nextInt(3) == 1
+                      ? "assets/gifs/greenStar.gif"
+                      : "assets/gifs/firework.gif"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               padding: EdgeInsets.all(40),
-              color: Colors.cyan,
+              //color: Colors.cyan,
               child: Center(
                 child: Column(
                   children: [
                     SizedBox(
                       height: 100,
                     ),
-                    Text("Sonuç",
-                        style: TextStyle(
-                          color: Color(0xFF5B16D0),
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                        )),
-                    SizedBox(
-                      height: 30,
+
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          color: Colors.redAccent.withOpacity(0.6),
+                          alignment: Alignment.center,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Sonuç",
+                                  style: TextStyle(
+
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                  "Doğru : ${widget._trueAnswer}",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+
+                              Text(
+                                  "Yanlış : ${widget._falseAnswer}",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
-                    Text(
-                        "Doğru / Yanlış : ${widget._trueAnswer} / ${widget._falseAnswer}",
-                        style: TextStyle(
-                          color: Color(0xFF5B16D0),
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                        )),
+
                     SizedBox(
                       height: 100,
                     ),
+                    Expanded(
+                        child: Image.asset(rnd.nextInt(3) == 0
+                            ? "assets/gifs/dogs.gif"
+                            : rnd.nextInt(3) == 1
+                                ? "assets/gifs/girl.gif"
+                                : "assets/gifs/boy.gif")),
                   ],
                 ),
               ),

@@ -7,7 +7,6 @@ import 'package:the_hero_brain/utilities/widgets.dart';
 import 'package:the_hero_brain/utilities/tts_util.dart';
 
 class QuestionScreen extends StatefulWidget {
-
   final int _command;
 
   QuestionScreen(this._command);
@@ -42,67 +41,62 @@ class _QuestionScreenState extends State<QuestionScreen> {
         theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: scaffoldBC),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body: SafeArea(
-            child: LayoutBuilder(builder:
-                (BuildContext context, BoxConstraints viewportConstraints) {
-              return SingleChildScrollView(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: viewportConstraints.maxHeight,
+            body: SafeArea(
+              child: LayoutBuilder(builder:
+                  (BuildContext context, BoxConstraints viewportConstraints) {
+                return SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: viewportConstraints.maxHeight,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GridView.count(
+                          shrinkWrap: true,
+
+                          primary: false,
+                          //padding: EdgeInsets.all(20),
+                          //crossAxisSpacing: 10,
+                          //mainAxisSpacing: 10,
+                          crossAxisCount: 2,
+                          children:
+                              generateImageWidget(_questionBrain.listImage),
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                );
+              }),
+            ),
+            floatingActionButton: Container(
+              padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
                     children: [
-                      GridView.count(
-                        shrinkWrap: true,
-
-                        primary: false,
-                        //padding: EdgeInsets.all(20),
-                        //crossAxisSpacing: 10,
-                        //mainAxisSpacing: 10,
-                        crossAxisCount: 2,
-                        children: generateImageWidget(_questionBrain.listImage),
+                      Text(
+                        (QuestionBrain.questionNumber + 1).toString(),
+                        style: TextStyle(fontSize: 50, color: Colors.green),
                       ),
-
+                      Text(
+                        " / " + widget._command.toString(),
+                        style: TextStyle(fontSize: 25, color: Colors.grey),
+                      ),
                     ],
                   ),
-                ),
-              );
-            }),
-          ),
-
-          floatingActionButton: Container(
-            padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                
-                Row(
-                  children: [
-                    Text((QuestionBrain.questionNumber + 1).toString(), style: TextStyle(
-                      fontSize: 50,
-                      color: Colors.green
-                    ),),
-                    Text(" / " + widget._command.toString(), style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.grey
-                    ),),
-                  ],
-                ),
-
-                FloatingActionButton(
-                onPressed: () => tts.speak(_questionBrain.text),
-                child: Icon(
-                  Icons.record_voice_over,
-                  color: Colors.white,
-                ),
-                backgroundColor: Colors.green,
-              ),],
-            ),
-          )
-
-
-        ),
+                  FloatingActionButton(
+                    onPressed: () => tts.speak(_questionBrain.text),
+                    child: Icon(
+                      Icons.record_voice_over,
+                      color: Colors.white,
+                    ),
+                    backgroundColor: Colors.green,
+                  ),
+                ],
+              ),
+            )),
       ),
     );
   }
@@ -127,16 +121,33 @@ class _QuestionScreenState extends State<QuestionScreen> {
           Navigator.of(context).pop(true);
         });
 
-        tts.speak("${status ? "Doğru" : "Yanlış"} bildin");
+        tts.speak("${status ? "Doğru" : "Yanlış"} bildin"
+            "${status ? "\nAferin Sana" : "\nTekrar dene"}");
 
         return AlertDialog(
           title: Text("${status ? "Harika" : "Olamaz"}"),
-          content: Text(
-            "${status ? "Doğru" : "Yanlış"} bildin",
-            textScaleFactor: 1.0, // disables accessibility
-            style: TextStyle(
-              fontSize: 35.0,
-            ),
+          content: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                "${status ? "Doğru" : "Yanlış"} bildin"
+                "${status ? "\nAferin Sana" : "\nTekrar dene"}",
+                textScaleFactor: 1.0, // disables accessibility
+                style: TextStyle(
+                  fontSize: 35.0,
+                ),
+              ),
+              status
+                  ? Image.asset(
+                      'assets/gifs/firework.gif',
+                      fit: BoxFit.cover,
+                    )
+                  : Image.asset(
+                      'assets/gifs/ant2.gif',
+                      fit: BoxFit.cover,
+                    ),
+            ],
           ),
         );
       },

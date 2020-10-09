@@ -2,9 +2,7 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:the_hero_brain/screens/welcome_screen.dart';
-import 'package:the_hero_brain/utilities/styles.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:the_hero_brain/screens/question_screen.dart';
 import 'package:the_hero_brain/utilities/widgets.dart';
 
 class Splash extends StatefulWidget {
@@ -47,9 +45,8 @@ class OnboardingScreen extends StatefulWidget {
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen>{
+class _OnboardingScreenState extends State<OnboardingScreen> {
   final introKey = GlobalKey<IntroductionScreenState>();
-
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
@@ -59,7 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>{
 
   Widget _buildImage(String assetName) {
     return Align(
-      child: Image.asset('assets/images/onboarding/$assetName', width: 350.0),
+      child: Image.asset('assets/gifs/$assetName', width: 350.0),
       alignment: Alignment.bottomCenter,
     );
   }
@@ -84,42 +81,22 @@ class _OnboardingScreenState extends State<OnboardingScreen>{
             key: introKey,
             pages: [
               PageViewModel(
-                title: "Kids and teens",
-                body:
-                    "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-                image: _buildImage('onboarding0.png'),
+                title: "Çocuk ve Aile",
+                body: "Çocuklarınızı 7/24 takip edin. "
+                    "Desteğe ihtiyaç duyan bir çocuğa yardım etmek için daima hazır olun. Ve ihtiyaç duyduğu her şeyi bulduğunda, yanında durun.",
+                image: _buildImage('family1.jpg'),
                 decoration: pageDecoration,
               ),
               PageViewModel(
-                title: "Another title page",
-                body: "Another beautiful body text for this example onboarding",
-                image: _buildImage('onboarding1.png'),
-                footer: RaisedButton(
-                  onPressed: () {
-                    introKey.currentState?.animateScroll(0);
-                  },
-                  child: const Text(
-                    'FooButton',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  color: Colors.lightBlue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
+                title: "Şefkat Eğitimin Bir Parçasıdır",
+                body: "Çocuğunuza hata yaptığında dahi saygı duyun. Böylelikle hatalarını çabucak düzeltebilir.",
+                image: _buildImage('family2.jpg'),
                 decoration: pageDecoration,
               ),
               PageViewModel(
-                title: "Title of last page",
-                bodyWidget: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text("Click on ", style: bodyStyle),
-                    Icon(Icons.edit),
-                    Text(" to edit a post", style: bodyStyle),
-                  ],
-                ),
-                image: _buildImage('onboarding2.png'),
+                title: "İlgi Destektir",
+                body: "Bir çocuk destek gördüğünde, kendine güveni artar.",
+                image: _buildImage('family3.jpg'),
                 decoration: pageDecoration,
               ),
             ],
@@ -128,9 +105,10 @@ class _OnboardingScreenState extends State<OnboardingScreen>{
             showSkipButton: true,
             skipFlex: 0,
             nextFlex: 0,
-            skip: const Text('Skip'),
+            skip: const Text('Geç'),
             next: const Icon(Icons.arrow_forward),
-            done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+            done: const Text('Bitti',
+                style: TextStyle(fontWeight: FontWeight.w600)),
             dotsDecorator: const DotsDecorator(
               size: Size(10.0, 10.0),
               color: Color(0xFFBDBDBD),

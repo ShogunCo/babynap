@@ -31,7 +31,6 @@ class _PreparationScreenState extends State<PreparationScreen> {
                     children: [
                       GridView.count(
                         shrinkWrap: true,
-
                         primary: false,
                         padding: EdgeInsets.all(20),
                         crossAxisSpacing: 10,
@@ -58,30 +57,57 @@ class _PreparationScreenState extends State<PreparationScreen> {
   }
 
   Widget level(String text, int command) => FlatButton(
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(24.0),
-      child: Card(
-        shadowColor: Colors.blueAccent,
-          color: Colors.white,
-          child: Center(child: Column(
-              //mainAxisSize: MainAxisSize.min,
-              //crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(height: 25,),
-                Icon(Icons.question_answer, size: 60.0, color: Colors.blue),
-                SizedBox(height: 10,),
-                Text(text, style:  TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.blue,
-                ),),
-              ]
-          ),
-          )
-      ),
-    ),
-    onPressed: () => Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => QuestionScreen(command)),
-    ),
-  );
-
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(24.0),
+          child: Card(
+              shadowColor: Colors.blueAccent,
+              color: Colors.white,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                      top: 20,
+                      left: 0,
+                      right: 0,
+                      child: Container(
+                          color: Colors.white,
+                          child: Column(
+                            children: <Widget>[
+                             Image.asset("assets/gifs/star.gif"),
+                            ],
+                          ))),
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: Column(
+                        //mainAxisSize: MainAxisSize.min,
+                        //crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Icon(Icons.question_answer,
+                              size: 60.0, color: Colors.blue),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            text,
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )),
+        ),
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => QuestionScreen(command)),
+        ),
+      );
 }
